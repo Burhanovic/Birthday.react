@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import data from './data';
+import Form from './Form';
 import List from './List';
 function App() {
   const [people , setPeople] = useState(data);
@@ -31,14 +32,7 @@ function App() {
   }
   return (
           <main>
-            <div>
-              <form onSubmit = {newInfo}>
-                Input Name <input  value = {name} onChange= {nameChange} />
-
-                  Input Age <input value = {age} onChange = {ageChange} />
-                  <button type = 'submit'>add new person</button>
-              </form>
-            </div>
+            <Form age = {age} name = {name} nameChange = {nameChange} ageChange =  {ageChange} newInfo = {newInfo} />
           <section className='container'>
             <h2>{people.length} Birthdays left</h2>
             <List people = {people} delete1 = {delete1}/> 
